@@ -1,0 +1,22 @@
+<% if @calendar %>
+  <%== pagy_info(@pagy) %>
+  <%== @calendar[:day].label %>
+  <%== @calendar[:month].label(format: '%B %Y') %>
+
+  <%== pagy_nav(@calendar[:year]) %>
+  <%== pagy_nav(@calendar[:month]) %>
+  <%== pagy_nav(@calendar[:day]) %>
+<% end %>
+<%== pagy_nav(@pagy) %>
+
+<div id="events">
+  <% @events.each do |event| %>
+    <%= render event %>
+  <% end %>
+</div>
+
+<% if params[:skip] %>
+  <a href="?" >Show Calendar</a>
+<% else %>
+  <a href="?skip=true" >Hide Calendar</a>
+<% end %>
