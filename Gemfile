@@ -71,6 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
-gem "pagy", "~> 5.10"
+gem 'pagy', github: 'ddnexus/pagy', branch: 'dev'
+
+# gem "pagy", "~> 5.10"
 
 gem "faker", "~> 2.20"
